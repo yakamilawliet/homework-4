@@ -1,0 +1,19 @@
+create table employees1(
+    emp_no int,
+    birth_date date,
+    first_name varchar(9),
+    last_name varchar(9),
+    gender varchar(1),
+    hire_date date
+);
+
+insert into employees1 values (10001,'1953-09-02','Georgi','Facello','M','1986-06-26');
+insert into employees1 values (10002,'1964-06-02','Bezalel','Simmel','F','1985-11-21');
+insert into employees1 values (10003,'1959-12-03','Parto','Bamford','M','1986-08-28');
+insert into employees1 values (10004,'1954-05-01','Christian','Koblick','M','1986-12-01');
+
+select * from employees1;
+
+select * from employees1 order by hire_date asc limit 3,1;
+
+

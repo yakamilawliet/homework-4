@@ -1,0 +1,14 @@
+create table passing_number(
+ id int primary key,
+ number int
+);
+
+insert into passing_number values (1,4);
+insert into passing_number values (2,3);
+insert into passing_number values (3,3);
+insert into passing_number values (4,2);
+insert into passing_number values (5,5);
+insert into passing_number values (6,4);
+
+select t.id,t.number,(select count(s.number)+1 from ( select s.number, count( s.number ) from passing_number s group by number order by number desc ) s where s.number > t.number ) t_rank  from passing_number t order by t.number desc;
+
